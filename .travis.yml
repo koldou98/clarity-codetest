@@ -6,7 +6,7 @@ dist: trusty
 jdk: openjdk11
 
 script:
-  - ./gradlew build --scan -s
+  - ./gradlew build
 
 before_install:
   - chmod +x gradlew
