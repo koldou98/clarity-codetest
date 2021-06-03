@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/koldou98/clarity-codetest.svg?branch=main)](https://travis-ci.com/koldou98/clarity-codetest) 
+[![Build Status](https://travis-ci.com/koldou98/clarity-codetest.svg?branch=master)](https://travis-ci.com/koldou98/clarity-codetest) 
 [![Java CI with Gradle](https://github.com/koldou98/clarity-codetest/actions/workflows/gradle.yml/badge.svg)](https://github.com/koldou98/clarity-codetest/actions/workflows/gradle.yml)
 # Clarity-codetest
 This is the solution I have come up with for the codetest
