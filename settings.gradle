@@ -1,0 +1,5 @@
+rootProject.name = 'clarity-codetest'
+include 'listofhostnames'
+include 'unlimitedinputparser'
+include 'infiniteloggenerator'
+

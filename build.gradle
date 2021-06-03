@@ -1,0 +1,43 @@
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'application'
+
+    group 'es.koldo.clarity.codetest'
+    version '1.0'
+
+    compileJava {
+        sourceCompatibility('11')
+        targetCompatibility('11')
+
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'org.hamcrest:hamcrest:2.2'
+        testImplementation 'org.mockito:mockito-core:3.10.0'
+        testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.0'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    application {
+        getMainClass().set(project.property('mainClass').toString())
+    }
+
+    jar {
+        manifest {
+            attributes(
+                    'Main-Class': project.getProperties().get('mainClass'),
+                    'Class-Path': configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }.join(' ')
+            )
+        }
+    }
+}
