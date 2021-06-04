@@ -51,12 +51,15 @@ The tool should both parse previously written log files and terminate or collect
 - a list of hostnames received connections from a given (configurable) host during the last hour
 - the hostname that generated most connections in the last hour
 
+The hostnames can be modified during the runtime, modifying the *properties.ini* file
+
 #### Arguments
 - hostToConnect: Destination hostname of the connection to list the hostnames connected to this hostname (String)
 - hostConnectedFrom: Origin hostname of the connection to list the hostnames who received connections from this hostname (String)
 - filePath: Log filepath. This file can be logging while the application is running, so the application will read the logs in real time, or can be written file. This argument is optional, and if it is no data on it, the application will get the data form the standard input.
 
 Example:
+
 **gradlew**
 ```sh
 ./gradlew :unlimitedinputparser:run hostname1 hostname2 'inputLogs/input-file-10000 (12).txt'
@@ -71,6 +74,7 @@ This application will generate a log with the following format: <unix_timestamp>
 The unix timestamp will have an error of maximum 5 minutes. The log will be stored in a folder called inputLogs
 
 Example:
+  
 **gradlew**
 ```sh
 ./gradlew :infiniteloggenerator:run
